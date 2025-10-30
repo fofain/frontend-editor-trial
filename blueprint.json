@@ -1,0 +1,53 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "features": {
+    "networking": true
+  },
+  "login": true,
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/fofain/frontend-editor-trial/main/wp-content/themes/hello-elementor.zip"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/fofain/frontend-editor-trial/main/wp-content/plugins/elementor.zip"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/fofain/frontend-editor-trial/main/wp-content/plugins/elementor-pro.zip"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/fofain/frontend-editor-trial/main/wp-content/plugins/frontend-editor.zip"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "runPHP",
+      "code": "if (!get_role('restaurant_editor')) { add_role('restaurant_editor', 'Restaurant Editor', [ 'read' => true, 'edit_posts' => true, 'edit_pages' => true ]); } $user = get_user_by('login', 'admin'); if ($user) { $user->set_role('restaurant_editor'); }"
+    },
+    {
+      "step": "runPHP",
+      "code": "$page1ID = wp_insert_post(['post_title' => 'Template 1', 'post_status' => 'publish', 'post_type' => 'page']); $json1 = file_get_contents('https://raw.githubusercontent.com/fofain/frontend-editor-trial/main/wp-content/templates/elementor-4929-2025-10-29.json'); update_post_meta($page1ID, '_elementor_data', $json1); update_post_meta($page1ID, '_elementor_edit_mode', 'builder'); update_post_meta($page1ID, '_elementor_template_type', 'page');"
+    },
+    {
+      "step": "runPHP",
+      "code": "$page2ID = wp_insert_post(['post_title' => 'Template 2', 'post_status' => 'publish', 'post_type' => 'page']); $json2 = file_get_contents('https://raw.githubusercontent.com/fofain/frontend-editor-trial/main/wp-content/templates/elementor-4926-2025-10-29.json'); update_post_meta($page2ID, '_elementor_data', $json2); update_post_meta($page2ID, '_elementor_edit_mode', 'builder'); update_post_meta($page2ID, '_elementor_template_type', 'page');"
+    }
+  ]
+}

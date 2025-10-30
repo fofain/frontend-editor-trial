@@ -1,0 +1,252 @@
+/* New dish styling */
+.efe-pending-duplication[data-section-id^="new-dish-"] {
+    position: relative !important;
+    margin: 24px 0 !important;
+    border: 3px dashed #d1d5db !important;
+    border-radius: 16px !important;
+    background: linear-gradient(135deg, #fafafa 0%, #f3f4f6 100%) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.efe-pending-duplication[data-section-id^="new-dish-"]:hover {
+    border-color: #9ca3af !important;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%) !important;
+    transform: scale(1.01) !important;
+}
+
+.efe-new-dish-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 14px 20px !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    font-weight: 600 !important;
+    border-radius: 14px 14px 0 0 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Placeholder content styling */
+.efe-pending-duplication[data-section-id^="new-dish-"] .efe-editable-widget {
+    opacity: 0.6 !important;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.efe-pending-duplication[data-section-id^="new-dish-"] .efe-editable-widget:hover {
+    opacity: 1 !important;
+}
+
+.efe-pending-duplication[data-section-id^="new-dish-"] h3,
+.efe-pending-duplication[data-section-id^="new-dish-"] h4 {
+    color: #6b7280 !important;
+}
+
+.efe-pending-duplication[data-section-id^="new-dish-"] p {
+    color: #9ca3af !important;
+}
+
+/* Animation for new dishes */
+@keyframes newDishPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(102, 126, 234, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+    }
+}
+
+.efe-pending-duplication[data-section-id^="new-dish-"] {
+    animation: newDishPulse 2s infinite !important;
+}
+
+/* Success state for saved dishes */
+.efe-pending-duplication.efe-saved {
+    animation: none !important;
+    border: 3px solid #10b981 !important;
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%) !important;
+}
+
+.efe-pending-duplication.efe-saved .efe-new-dish-banner {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    content: "PIATTO SALVATO" !important;
+}
+
+/* Error state for failed saves */
+.efe-pending-duplication.efe-error {
+    border: 3px solid #f5576c !important;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+    animation: none !important;
+}
+
+.efe-pending-duplication.efe-error .efe-new-dish-banner {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    content: "ERRORE SALVATAGGIO" !important;
+}
+
+/* Loading overlay - Ultra specific selectors to override Elementor */
+body .efe-loading-overlay,
+html body .efe-loading-overlay,
+body .efe-loading-overlay.efe-active,
+html body .efe-loading-overlay.efe-active {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    z-index: 9999999 !important;
+    display: none !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Force display when active */
+body .efe-loading-overlay.efe-active,
+html body .efe-loading-overlay.efe-active {
+    display: flex !important;
+}
+
+.efe-loading-spinner {
+    width: 64px !important;
+    height: 64px !important;
+    border: 4px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: 4px solid #667eea !important;
+    border-right: 4px solid #764ba2 !important;
+    border-radius: 50% !important;
+    animation: efe-spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite !important;
+    margin-bottom: 32px !important;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Ultra specific spinner selectors */
+body .efe-loading-spinner,
+html body .efe-loading-spinner,
+body .efe-loading-overlay .efe-loading-spinner,
+html body .efe-loading-overlay .efe-loading-spinner {
+    width: 64px !important;
+    height: 64px !important;
+    border: 4px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: 4px solid #667eea !important;
+    border-right: 4px solid #764ba2 !important;
+    border-radius: 50% !important;
+    animation: efe-spin 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite !important;
+    margin-bottom: 32px !important;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3) !important;
+}
+
+.efe-loading-text {
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    margin-bottom: 14px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    padding: 14px 28px !important;
+    border-radius: 12px !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ultra specific text selectors */
+body .efe-loading-text,
+html body .efe-loading-text,
+body .efe-loading-overlay .efe-loading-text,
+html body .efe-loading-overlay .efe-loading-text,
+body .efe-loading-content .efe-loading-text,
+html body .efe-loading-content .efe-loading-text {
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    margin-bottom: 14px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    padding: 14px 28px !important;
+    border-radius: 12px !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.efe-loading-subtext {
+    color: #e5e7eb !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 10px 24px !important;
+    border-radius: 8px !important;
+    letter-spacing: 0.4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Ultra specific subtext selectors */
+body .efe-loading-subtext,
+html body .efe-loading-subtext,
+body .efe-loading-overlay .efe-loading-subtext,
+html body .efe-loading-overlay .efe-loading-subtext,
+body .efe-loading-content .efe-loading-subtext,
+html body .efe-loading-content .efe-loading-subtext {
+    color: #e5e7eb !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 10px 24px !important;
+    border-radius: 8px !important;
+    letter-spacing: 0.4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+@keyframes efe-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Disable interactions when loading */
+.efe-loading .efe-editable-widget,
+.efe-loading .efe-section-controls button,
+.efe-loading .efe-edit-mode-toggle {
+    pointer-events: none !important;
+    opacity: 0.5;
+}
+
+/* Show loading overlay when active - Ultra specific */
+body .efe-loading-overlay.efe-active,
+html body .efe-loading-overlay.efe-active,
+body .efe-loading-overlay.efe-active *,
+html body .efe-loading-overlay.efe-active * {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Loading content container - Ultra specific */
+body .efe-loading-content,
+html body .efe-loading-content,
+body .efe-loading-overlay .efe-loading-content,
+html body .efe-loading-overlay .efe-loading-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    padding: 40px 56px !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4) !important;
+}

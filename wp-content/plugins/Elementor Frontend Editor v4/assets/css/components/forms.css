@@ -1,0 +1,187 @@
+/**
+ * Form Styles - Modern Design System
+ */
+
+/* Form groups */
+.efe-form-group {
+    margin-bottom: 24px;
+}
+
+.efe-form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Form inputs */
+.efe-input,
+.efe-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+.efe-input:hover,
+.efe-textarea:hover {
+    border-color: #d1d5db;
+}
+
+.efe-input:focus,
+.efe-textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.efe-textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* Checkbox inputs */
+.efe-checkbox-group {
+    margin-bottom: 4px;
+}
+
+.efe-checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.efe-checkbox-container:hover {
+    background-color: #f9fafb;
+}
+
+.efe-checkbox-container input[type="checkbox"] {
+    margin-right: 12px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    accent-color: #667eea;
+}
+
+.efe-checkbox-label {
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+}
+
+/* Form action buttons */
+.efe-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 2px solid #f3f4f6;
+}
+
+.efe-save-button,
+.efe-cancel-button,
+.efe-delete-button {
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+}
+
+.efe-save-button {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+    font-weight: 700 !important;
+}
+
+.efe-save-button:hover {
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+    transform: translateY(-2px);
+}
+
+.efe-save-button:active {
+    transform: translateY(0);
+}
+
+.efe-delete-button {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(245, 87, 108, 0.3);
+}
+
+.efe-delete-button:hover {
+    box-shadow: 0 8px 24px rgba(245, 87, 108, 0.4);
+    transform: translateY(-2px);
+}
+
+.efe-delete-button:active {
+    transform: translateY(0);
+}
+
+.efe-cancel-button {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    border: 2px solid #e5e7eb;
+}
+
+.efe-cancel-button:hover {
+    background-color: #e5e7eb;
+    border-color: #d1d5db;
+    color: #374151;
+}
+
+/* Disabled state */
+.efe-save-button:disabled,
+.efe-delete-button:disabled,
+.efe-cancel-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Field notes and help text */
+.efe-field-note {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 8px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Global currency note styling */
+.efe-global-currency-note {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-left: 4px solid #f97316;
+    padding: 16px 20px;
+    margin-top: 20px;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 4px 12px rgba(252, 182, 159, 0.2);
+}
+
+.efe-global-currency-note p {
+    margin: 0;
+    font-size: 13px;
+    color: #8b4513;
+    line-height: 1.6;
+    font-weight: 500;
+}

@@ -1,0 +1,29 @@
+/**
+ * Main CSS for Elementor Menu Frontend Editor
+ * Version 1.4 optimized
+ */
+
+/* Import all modular CSS components */
+@import url('components/edit-button.css');
+@import url('components/editable-elements.css');
+@import url('components/section-controls.css');
+@import url('components/modals.css');
+@import url('components/forms.css');
+@import url('components/notifications.css');
+@import url('components/responsive.css');
+
+/* Maximum override for icon visibility */
+.efe-editing-mode .efe-hidden-icon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+

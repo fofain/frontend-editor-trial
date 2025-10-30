@@ -1,0 +1,122 @@
+/**
+ * Editable Elements Styles - Modern Design System
+ */
+
+/* Basic styling for editable elements */
+.efe-editable {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* Highlight on hover */
+.efe-editable:hover {
+    outline: 2px solid #a78bfa;
+    outline-offset: 4px;
+}
+
+/* Tooltip on hover */
+.efe-editable:hover::after {
+    content: 'Clicca per modificare';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 11px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    animation: tooltipBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-width: 90vw;
+    pointer-events: none;
+}
+
+/* Mobile responsive tooltip */
+@media (max-width: 768px) {
+    .efe-editable:hover::after {
+        font-size: 9px;
+        padding: 6px 10px;
+        white-space: normal;
+        max-width: 140px;
+        text-align: center;
+        line-height: 1.3;
+        /* Center it and prevent overflow */
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        /* Ensure it stays within viewport */
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Hide tooltip on very small screens to prevent layout issues */
+@media (max-width: 480px) {
+    .efe-editable:hover::after {
+        display: none;
+    }
+
+    /* Instead, show a subtle visual indicator */
+    .efe-editable:hover {
+        outline-width: 3px;
+    }
+}
+
+@keyframes tooltipBounce {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Highlighted element (currently selected) */
+.efe-highlight {
+    outline: 3px solid #667eea;
+    outline-offset: 4px;
+    z-index: 1;
+    box-shadow: 0 0 0 6px rgba(102, 126, 234, 0.1);
+}
+
+/* Section hover effects */
+.efe-section-hover {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Section hover overlay */
+.efe-section-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+}
+
+.efe-section-hover:hover::before {
+    opacity: 1;
+}
+
+/* Hidden icons */
+.efe-hidden-icon {
+    display: none !important;
+}

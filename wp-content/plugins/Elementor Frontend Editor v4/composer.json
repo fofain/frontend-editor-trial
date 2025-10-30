@@ -1,0 +1,21 @@
+{
+    "name": "fofain/elementor-menu-frontend-editor",
+    "description": "A WordPress plugin that allows restaurant owners to edit their Elementor-built menus directly from the frontend",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Fofain",
+            "email": "support@fofain.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "classmap": [
+            "includes/"
+        ]
+    },
+    "minimum-stability": "stable"
+}

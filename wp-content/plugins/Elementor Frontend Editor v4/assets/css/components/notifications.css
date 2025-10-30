@@ -1,0 +1,66 @@
+/**
+ * Notification Styles - Modern Design System
+ */
+
+/* Base notification */
+.efe-notification {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 99999;
+    padding: 16px 24px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: notificationSlide 3.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+}
+
+/* Notification types */
+.efe-notification-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-left: 4px solid #34d399;
+}
+
+.efe-notification-error {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-left: 4px solid #fda4af;
+}
+
+.efe-notification-warning {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border-left: 4px solid #fcd34d;
+    color: #78350f;
+}
+
+.efe-notification-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-left: 4px solid #a78bfa;
+}
+
+/* Slide animation */
+@keyframes notificationSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(120px) scale(0.9);
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(120px) scale(0.9);
+    }
+}

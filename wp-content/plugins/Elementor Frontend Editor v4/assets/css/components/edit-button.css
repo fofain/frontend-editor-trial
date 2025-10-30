@@ -1,0 +1,89 @@
+/**
+ * Edit Button Styles - Modern Design System
+ */
+
+/* Main edit button container */
+.efe-edit-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+/* Edit button styling */
+#toggle-elementor-edit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#toggle-elementor-edit:hover {
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.45);
+    transform: translateY(-2px) scale(1.02);
+}
+
+#toggle-elementor-edit:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Active state (edit mode on) */
+.efe-edit-button.active #toggle-elementor-edit {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 8px 24px rgba(245, 87, 108, 0.35);
+}
+
+.efe-edit-button.active #toggle-elementor-edit:hover {
+    box-shadow: 0 12px 32px rgba(245, 87, 108, 0.45);
+}
+
+/* Global currency button */
+.efe-currency-button {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #8b4513;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(252, 182, 159, 0.4);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.efe-currency-button:hover {
+    box-shadow: 0 12px 32px rgba(252, 182, 159, 0.5);
+    transform: translateY(-3px) rotate(5deg);
+}
+
+.efe-currency-button:active {
+    transform: translateY(0) rotate(0deg);
+}
+
+.efe-currency-button .efe-currency-icon {
+    display: block;
+    line-height: 1;
+}
+
+/* Show currency button only in edit mode */
+.efe-editing-mode .efe-currency-button {
+    display: flex !important;
+}
